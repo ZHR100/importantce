@@ -1,22 +1,28 @@
 <template>
   <div class="home">
-    <h1>{{ $store.state.msg }}</h1>
-    <h1>{{ $store.state.count }}</h1>
-    <h1>{{ $store.getters.total }}</h1>
-
     <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <ul>
+      <li v-for="item in list" :key="item.id">
+        <router-link :to="'/playlist?id=' + item.id">{{ item.name }}</router-link> 
+      </li>
+    </ul>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
+import { getPersonalized } from '../api/songs'
 export default {
   name: 'Home',
-  components: {
-    HelloWorld
+  data() {
+    return {
+      list: []
+    }
+  },
+  created() {
+    getPersonalized().then(res => {
+      console.log(res);
+      this.list = res.data.result
+    })
   }
 }
 </script>
