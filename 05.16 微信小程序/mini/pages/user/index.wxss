@@ -1,0 +1,30 @@
+/* pages/user/index.wxss */
+.box {
+  background-color: tomato;
+}
+
+.box1 {
+  width: 200px;
+  height: 200px;
+  background-color: yellowgreen;
+  font-size: 30px;
+  color: #fff;
+}
+.box2 {
+  width: 200rpx;
+  height: 200rpx;
+  background-color: rebeccapurple;
+  font-size: 30rpx;
+  color: #fff;
+}
+
+.wrap {
+  display: flex;
+  height: 30px;
+  border: 4px solid red;
+}
+.wrap .item {
+  flex-grow: 1;
+  text-align: center;
+  border: 4px solid blue;
+}

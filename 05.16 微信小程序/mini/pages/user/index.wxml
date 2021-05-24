@@ -1,0 +1,45 @@
+<!--pages/user/index.wxml-->
+<text>pages/user/index.wxml</text>
+<view>
+	<view>姓名：{{ user.name }}</view>
+	<view>年龄：{{ user.age }}</view>
+
+	<view>{{ count }}</view>
+	<button bindtap="add">+</button>
+	<button bindtap="sub">-</button>
+
+	<view wx:for="{{ students }}">
+		{{ index }}、{{ item.name }}-{{ item.age }}
+	</view>
+
+	<view class="box" wx:for="{{ students }}" wx:for-item="s" wx:for-index="i">
+		{{ i }}、{{ s.name }}-{{ s.age }}
+	</view>
+
+	<view>
+		<navigator url="/pages/logs/logs">跳转到日志页</navigator>
+		<navigator url="/pages/index/index">跳转到首页</navigator>
+	</view>
+	<view>
+		<button bindtap="toLog">跳转日志也</button>
+	</view>
+
+	<view class="box1">
+		字字字字字字
+	</view>
+	<view class="box2">
+		字字字字字字
+	</view>
+
+	<view class="wrap">
+		<view 
+      wx:for="{{ tabs }}" 
+      bindtap="tabClick" 
+      data-index="{{ index }}" 
+      class="item"
+      style="background: {{ active == index ? 'tomato' : '' }}"
+    >
+			{{ item }}
+		</view>
+	</view>
+</view>
