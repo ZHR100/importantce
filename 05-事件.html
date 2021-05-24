@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">这是一个div</div>
+    <input type="text" id="input1">
+
+    <select name="" id="slt">
+        <option value="11111">1</option>
+        <option value="22222">2</option>
+        <option value="33333">3</option>
+    </select>
+
+    <script>
+        var div = document.getElementById('box')
+
+        div.ondblclick = function() {
+            alert('被点击了')
+        }
+
+        var input = document.getElementById('input1')
+        input.onchange = function() {
+            alert('1111')
+        }
+
+        var slt = document.getElementById('slt')
+        slt.onchange = function() {
+            // alert(11)
+            alert(slt.value)
+        }
+    </script>
+</body>
+</html>

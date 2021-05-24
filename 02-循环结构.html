@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 打印100个1
+        for(var i = 0; i < 100; i++) {
+            console.log('1');
+        }
+        
+        // 计算 1~100整数和，能被7整除的除外
+        var total = 0
+        for(var i = 1; i <= 100; i++) {
+            // console.log(i);
+            // if(i % 7 !== 0) {
+            //     total = total + i
+            // }
+            if(i % 7 === 0) {
+                // continue;
+                break;
+            }
+            console.log(i);
+            total = total + i
+        }
+        console.log(total);
+        
+        var num = 11
+        // while (num <= 10) {
+        //     console.log(num);
+        //     num++
+        // }
+
+        do {
+            console.log(num);
+            num++
+        } while(num <= 10)
+    </script>
+</body>
+</html>

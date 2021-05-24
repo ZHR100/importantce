@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        这是div
+    </div>
+
+    <div class="item">1111</div>
+    <div class="item">2222</div>
+
+    <script>
+        var box = document.getElementById('box')
+        console.log(box);
+        
+        var items = document.getElementsByClassName('item')
+        console.log(items);
+        
+        var divs = document.getElementsByTagName('div')
+        console.log(divs);
+        
+        var box1 = document.querySelector('#box')
+        console.log(box1);
+        
+        var items1 = document.querySelectorAll('.item')
+        console.log(items1);
+        
+        console.log(document.body);
+        console.log(document.documentElement);
+        
+    </script>
+</body>
+</html>

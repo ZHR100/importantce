@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button>点击</button>
+    <button>删除</button>
+    <ul>
+        <li>11</li>
+        <li>22</li>
+        <li>33</li>
+    </ul>
+
+
+    <p>这是一个p</p>
+    <div></div>
+    <div></div>
+    
+    <script src="./jquery.js"></script>
+    <script>
+        $('button').eq(0).click(function() {
+            // $('ul').append('<li>111111111</li>')
+            $('ul').prepend('<li>111111111</li>')
+            $('ul').after('<h1>2222222</h1>')
+        })
+
+        // $('p').appendTo('div')
+
+        $('button').eq(1).click(function() {
+            // $('ul').empty()
+            $('ul').remove()
+        })
+
+    </script>
+</body>
+</html>

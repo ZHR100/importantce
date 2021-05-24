@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function aaa() {
+        //     console.log('aaa');
+        // }
+
+        // aaa()
+        // aaa()
+
+        // 计算1~100整数和的函数
+        // 计算n~m整数和的函数
+        function sum(n, m) {
+            var total = 0
+            for(var i = n; i <= m; i++) {
+                total = total + i
+            }
+            // console.log(total);
+            return total
+        }
+        var total1 = sum(20, 30) // 计算 20 ~ 30 , 得到的结果要 * 2
+        var total2 = sum(1, 10) // 计算 1 ~ 10 , 得到的结果要 / 2
+
+        console.log(total1 * 2);
+        console.log(total2 / 2);
+        
+    </script>
+</body>
+</html>

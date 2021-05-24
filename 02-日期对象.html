@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var date = new Date()
+        console.log(date);
+        
+        var y = date.getFullYear()
+        console.log(y);
+        var m = date.getMonth() + 1
+        console.log(m);
+        var d = date.getDate()
+        console.log(d);
+        
+        console.log(date.getDay() + 1);
+        
+        console.log(y + '/' + m + '/' + d);
+        
+        console.log(date.getTime());
+        
+        var str = '2021-01-01 00:00:00'
+        var date1 = new Date(str)
+        console.log(date1.getFullYear());
+        
+        console.log(date - date1);
+        
+    </script>
+</body>
+</html>

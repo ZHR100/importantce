@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button>后退两个页面</button>
+    <h1>页面2</h1>
+    <script>
+        document.querySelectorAll('button')[0].onclick = function() {
+            history.go(-2)
+        }
+    </script>
+</body>
+</html>

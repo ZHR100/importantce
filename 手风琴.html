@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .imgs {
+            width: 900px;
+            height: 420px;
+            position: relative;
+            list-style: none;
+            overflow: hidden;
+        }
+
+        .imgs li:nth-child(1) {
+            background-image: url(https://www.jq22.com/demo/jQuerySfq201710142020/Images/a1.png);
+            left: 0;
+        }
+
+        .imgs li:nth-child(2) {
+            background-image: url(https://www.jq22.com/demo/jQuerySfq201710142020/Images/a2.png);
+            left: 100px;
+        }
+
+        .imgs li:nth-child(3) {
+            background-image: url(https://www.jq22.com/demo/jQuerySfq201710142020/Images/a3.png);
+            left: 200px;
+        }
+
+        .imgs li:nth-child(4) {
+            background-image: url(https://www.jq22.com/demo/jQuerySfq201710142020/Images/a4.png);
+            left: 300px;
+        }
+
+        .imgs li {
+            width: 600px;
+            height: 100%;
+            position: absolute;
+            transition: 1s linear;
+        }
+
+        .imgs li .model {
+            height: 100%;
+            width: 100px;
+            background: rgba(0, 0, 0, 0.7);
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <ul class="imgs">
+            <li>
+                <div class="model" index="0">1</div>
+            </li>
+            <li>
+                <div class="model" index="1">2</div>
+            </li>
+            <li>
+                <div class="model" index="2">3</div>
+            </li>
+            <li>
+                <div class="model" index="3">4</div>
+            </li>
+        </ul>
+    </div>
+
+    <script src="./jquery.js"></script>
+    <script>
+        var models = [true, true, true, true] // true代表在左边
+        $('.model').mouseenter(function () {
+            var index = parseInt($(this).attr('index'))
+            var flag = models[index]
+
+            if (flag) {
+                for (var i = index + 1; i < models.length; i++) {
+                    var flag1 = models[i]
+                    if (flag1) {
+                        $('.model').eq(i).parent().css({
+                            left: $('.model').eq(i).offset().left + 500
+                        })
+                        models[i] = !models[i]
+                    }
+                }
+            } else {
+                for (var i = index; i >= 1; i--) {
+                    var flag2 = models[i]
+                    if (!flag2) {
+                        $('.model').eq(i).parent().css({
+                            left: $('.model').eq(i).offset().left - 500
+                        })
+                        models[i] = !models[i]
+                    }
+                }
+            }
+            $('.model').css({
+                pointerEvents: 'none'
+            })
+            setTimeout(function () {
+                $('.model').css({
+                    pointerEvents: ''
+                })
+            }, 1000)
+        })
+    </script>
+</body>
+
+</html>

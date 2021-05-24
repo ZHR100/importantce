@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = ['a', 'b', 'c', 'd', 'e']
+        // for(var i = 0; i < arr.length; i++) {
+        //     console.log(arr[i]);
+        // }
+        // arr.forEach(function(item, index) {
+        //     console.log(item);
+        //     console.log(index);
+        // })
+        // for(var item of arr) {
+        //     console.log(item);
+        // }
+        // for(var i in arr) {
+        //     console.log(i);
+        //     console.log(arr[i]);
+        // }
+        console.log(arr.includes('6'));
+        
+        console.log(arr.indexOf('6'));
+        
+        console.log(arr.join('-'));
+        
+        arr.push('f')
+        arr.unshift('0')
+        console.log(arr);
+        
+        arr.pop()
+        console.log(arr);
+
+        arr.reverse()
+        console.log(arr); // ["e", "d", "c", "b", "a", "0"]
+        
+        var newArr = arr.splice(1, 1, 2,2,2,2,2)
+        console.log(newArr); // ["d"]
+        console.log(arr); // ["e", 2, 2, 2, 2, 2, "c", "b", "a", "0"]
+        
+        var nums = [14,43676,898324,12,3,6]
+        nums.sort(function(a, b) {
+            return b - a 
+        })
+        console.log(nums);
+        
+        var students = [
+            { name: '张三', score: 99 },
+            { name: '李四', score: 77 },
+            { name: '王五', score: 88 },
+        ]
+        students.sort(function(a, b) {
+            return b.score - a.score
+        })
+        console.log(students);
+        
+    </script>
+</body>
+</html>

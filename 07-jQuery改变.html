@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>111</h1>
+    <img src="http://icon.nipic.com/BannerPic/20210315/original/20210315084633_1.jpg" alt="">
+    <button>点击</button>
+
+    <script src="./jquery.js"></script>
+    <script>
+        $('button').click(function() {
+            $('h1').text('<a href="">22222222</a>')
+            // $('h1').html('<a href="">22222222</a>')
+
+            $('img').prop('src', 'http://icon.nipic.com/BannerPic/20210315/original/20210315085122_1.jpg')
+            // $('img').prop('index', 100)
+            $('img').attr('index', 100)
+        })
+    </script>
+</body>
+</html>

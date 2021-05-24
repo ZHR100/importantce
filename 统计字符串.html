@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str = 'asfdgvbreh243y5yfdsghjyrppppppppp'
+        // var count = 0
+        // for(var i = 0; i < str.length; i++) {
+        //     if(str.charAt(i) === 'y') {
+        //         count++
+        //     }
+        // }
+        // console.log(count);
+        
+        const obj = {}
+        for(var i = 0; i < str.length; i++) {
+            if(!obj[str.charAt(i)]) {
+                obj[str.charAt(i)] = 1
+            } else {
+                obj[str.charAt(i)]++
+            }
+        }
+        console.log(obj);
+        
+    </script>
+</body>
+</html>

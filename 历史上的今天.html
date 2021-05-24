@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="date">
+    <ul></ul>
+
+    <script src="./jquery.js"></script>
+    <script>
+        $('input').change(function () {
+            var val = $(this).val()
+            console.log(val);
+            var time = val.split('-')[1] + val.split('-')[2]
+            console.log(time);
+
+            $.ajax({
+                url: 'http://api.tianapi.com/txapi/lishi/index?key=4d677b99e11d49d389e4be298e88b5c9&date=' + time,
+                success: function(res) {
+                    console.log(res);
+                    var newslist = res.newslist
+                    $('ul').empty()
+                    $.each(newslist, function(index, item) {
+                        console.log(item);
+                        
+                        $('ul').append('<li>'+ item.title +'</li>')
+                    })
+                }
+            })
+        })
+
+
+    </script>
+</body>
+
+</html>

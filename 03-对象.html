@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 张三 男 18
+        // var name = '张三'
+        // var age = 18
+        // var sex = '男'
+
+        // var zs = ['张三', 18, '男', 60]
+
+        // 键值对  
+        // 键：代表属性含义
+        // 值：属性对应的值
+        // var zs = {
+        //     name: '张三',
+        //     age: 18,
+        //     sex: '男',
+        //     jinshi: true,
+        //     skills: ['唱', '跳', 'rap'],
+        //     say: function() {
+        //         console.log('说话了');
+        //     } 
+        // }
+
+        var zs = new Object() // new Object()创建一个空对象
+        
+        zs.name = '张三'
+        zs.age = 18
+        zs['sex'] = '男'
+        zs.say = function() {
+            console.log('说话了');
+        }
+        console.log(zs);
+    </script>
+</body>
+</html>

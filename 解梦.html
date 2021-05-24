@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main"></div>
+    <input type="text">
+    <button>点击</button>
+
+    <script src="./jquery.js"></script>
+    <script>
+        $('button').click(function() {
+            var val = $('input').val()
+
+            $.ajax({
+                url: 'http://api.tianapi.com/txapi/dream/index?key=4d677b99e11d49d389e4be298e88b5c9&num=10&word=' + val,
+                success: function(res) {
+                    console.log(res);
+                    var newslist = res.newslist
+                    $('.main').empty()
+                    $.each(newslist, function(index, item) {
+                        $('.main').append(`<div>${item.result}</div>`)
+                    })
+                }
+            })
+        })
+    </script>
+</body>
+</html>

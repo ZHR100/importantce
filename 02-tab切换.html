@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ul {
+            display: flex;
+            background: rgb(247,247,247);
+            list-style: none;
+        }
+        li {
+            padding: 8px 12px;
+        }
+        .item {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>商品介绍</li>
+        <li>规格与包装</li>
+        <li>售后保障</li>
+        <li>商品评价(5万+)</li>
+    </ul>
+    <div class="item">商品介绍</div>
+    <div class="item">规格与包装</div>
+    <div class="item">售后保障</div>
+    <div class="item">商品评价(5万+)</div>
+
+    <script>
+        var lis = document.querySelectorAll('li')
+        var items = document.querySelectorAll('.item')
+        console.log(lis);
+        var lastIndex = 0
+        
+        for(var i = 0; i < lis.length; i++) {
+            lis[i].setAttribute('index', i)
+            lis[i].onclick = function() {
+                console.log(this); // 事件函数中的this，指的就是绑定事件的标签对象   
+                // console.log(i);
+                lis[lastIndex].style.background = ''
+                lis[lastIndex].style.color = '#000'
+                this.style.background = 'rgb(228,57,60)'
+                this.style.color = '#fff'
+                
+                console.log(this.getAttribute('index'));
+                var index = this.getAttribute('index')
+                items[lastIndex].style.display = 'none'
+                items[index].style.display = 'block'
+
+                lastIndex = index
+            }
+        }
+        console.log(i);
+        
+    </script>
+</body>
+</html>

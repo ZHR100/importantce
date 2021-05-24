@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+       
+    </ul>
+
+    <script>
+        var news = [
+            '标题1',
+            '标题2',
+            '标题3',
+            '标题3',
+            '标题3',
+            '标题3',
+            '标题3',
+            '标题3',
+        ]
+        var ul = document.querySelector('ul')
+        // for(var i = 0; i < news.length; i++) {
+        //     var li = document.createElement('li')
+        //     console.log(li);
+        //     li.innerText = news[i]
+
+        //     ul.appendChild(li)
+        // }
+       
+        var str = ''
+        for(var i = 0; i < news.length; i++) {
+            str += `<li>${news[i]}</li>`
+        }
+        console.log(str);
+        
+        ul.innerHTML = str
+    </script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .back {
+            width: 100px;
+            height: 100px;
+            position: fixed;
+            right: 50px;
+            bottom: 100px;
+            background: red;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <p>zi</p>
+    <p>zi</p>
+    <p>zi</p>
+    <p>zi</p>
+    <p>zi</p>
+    <p>zi</p>
+    <p>zi</p>
+    <p>zi</p>
+    <p>zi</p>
+    <p>zi</p>
+    <p>zi</p>
+    <p>zi</p>
+    <p>zi</p>
+    <p>zi</p>
+    <p>zi</p>
+    <p>zi</p>
+    <p>zi</p>
+    <p>zi</p>
+    <p>zi</p>
+    <p>zi</p>
+    <p>zi</p>
+    <p>zi</p>
+    <p>zi</p>
+    <p>zi</p>
+    <p>zi</p>
+    <p>zi</p>
+    <p>zi</p>
+    <p>zi</p>
+    <p>zi</p>
+    <p>zi</p>
+    <p>zi</p>
+    <p>zi</p>
+    <p>zi</p>
+    <p>zi</p>
+    <p>zi</p>
+    <p>zi</p>
+    <p>zi</p>
+    <p>zi</p>
+    <p>zi</p>
+    <p>zi</p>
+    <p>zi</p>
+    <p>zi</p>
+    <p>zi</p>
+    <p>zi</p>
+    <p>zi</p>
+    <p>zi</p>
+    <p>zi</p>
+    <p>zi</p>
+    <p>zi</p>
+    <p>zi</p>
+    <p>zi</p>
+    <p>zi</p>
+    <p>zi</p>
+    <p>zi</p>
+    <p>zi</p>
+
+    <div class="back"></div>
+
+
+    <script src="./jquery.js"></script>
+    <script>
+        $(window).scroll(function () {
+            // console.log(1);
+            console.log($(this).scrollTop());
+            if ($(this).scrollTop() > 200) {
+                $('.back').show()
+            } else {
+                $('.back').hide()
+            }
+        })
+
+        $('.back').click(function () {
+            // $(window).scrollTop(0)
+            $("body,html").animate(
+                {
+                    scrollTop: 0
+                },
+                800
+            );
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="prev">上一张</button>
+    <button id="next">下一张</button>
+    <div>
+        <img src="" alt="">
+    </div>
+
+    <script>
+        var imgs = [
+            'http://icon.nipic.com/BannerPic/20210201/original/20210201095212_1.jpg',
+            'http://icon.nipic.com/BannerPic/20210201/original/20210201095219_1.jpg',
+            'http://icon.nipic.com/BannerPic/20210201/original/20210201095305_1.jpg',
+            'http://icon.nipic.com/BannerPic/20210201/original/20210201095257_1.jpg'
+        ]
+
+        var img = document.querySelector('img')
+        img.src = imgs[0] // 显示第一张图片
+
+        var index = 0
+
+        var next = document.getElementById('next')
+        next.onclick = function() {
+            index++
+            if(index === imgs.length) {
+                index = 0
+            }
+            img.src = imgs[index]
+        }
+
+        var prev = document.getElementById('prev')
+        prev.onclick = function() {
+            index--
+            if(index < 0) {
+                index = imgs.length - 1
+            }
+            img.src = imgs[index]
+        }
+    </script>
+</body>
+
+</html>

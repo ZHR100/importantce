@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app" class="app">
+        <h1>总分：{{ getTotal() }}</h1>
+        <h1>总分：{{ getTotal() }}</h1>
+        <h1>总分：{{ getTotal() }}</h1>
+        <h1>总分：{{ total + 100 }}</h1>
+        <h1>总分：{{ total }}</h1>
+        <h1>总分：{{ total }}</h1>
+    </div>
+
+    <script src="./vue.js"></script>
+    <script>
+        new Vue({
+            el: '.app',
+            data: {
+                students: [
+                    { name: 'zs', score: 88 },
+                    { name: 'qq', score: 65 },
+                    { name: 'ww', score: 22 },
+                    { name: 'ee', score: 66 },
+                ],
+                // total: 100
+            },
+            computed: {
+                total: function() {
+                    console.log('total');
+                    var total = 0
+                    for(var i = 0; i < this.students.length; i++) {
+                        total += this.students[i].score
+                    }
+                    return total
+                }
+            },
+            methods: {
+                getTotal: function() {
+                    console.log('getTotal');
+                    var total = 0
+                    for(var i = 0; i < this.students.length; i++) {
+                        total += this.students[i].score
+                    }
+                    return total
+                }
+            },
+        })
+    </script>
+</body>
+</html>

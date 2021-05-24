@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        
+    </ul>
+    
+    <script>
+        // 创建一个ajax对象
+        var xhr = new XMLHttpRequest()   
+        
+        // 打开请求
+        // method，第一个参数，请求类型GET/POST，用哪一个由服务器接口决定
+        xhr.open('GET', 'http://api.tianapi.com/esports/index?key=4d677b99e11d49d389e4be298e88b5c9&num=10', true)
+
+        // 发送请求
+        xhr.send()
+
+        // 得到服务器的响应
+        xhr.onload = function() {
+            var text = xhr.responseText
+            console.log(text);
+            var data = JSON.parse(text)
+            console.log(data);
+            var newslist = data.newslist
+            var ul = document.querySelector('ul')
+            for(var i = 0; i < newslist.length; i++) {
+                var li = document.createElement('li')
+                li.innerText = newslist[i].title
+                ul.appendChild(li)
+            }
+        }
+    </script>
+</body>
+</html>

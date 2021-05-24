@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // var name1 = '张三'
+        // var name2 = '李四'
+        // var name3 = '王五'
+        // var names = ['张三', '李四', '王五']
+        var names = new Array('张三', '李四', '王五')
+
+        // console.log('我叫' + names[0]);
+        // console.log('我叫' + names[1]);
+        // console.log('我叫' + names[2]);
+
+        names[0] = 'xxx'
+        names[10] = 'yyy'
+        
+        for(var i = 0; i < names.length; i++) {
+            console.log('我叫' + names[i]);
+        }
+
+        console.log(names.length);
+        
+    </script>
+</body>
+</html>

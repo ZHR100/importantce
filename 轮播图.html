@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <div>
+            <button @click="prev">上一张</button>
+            <button @click="next">下一张</button>
+        </div>
+        <img :src="banners[index].imageUrl" alt="">
+    </div>
+
+    <script src="./vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                banners: [{ "imageUrl": "http://p1.music.126.net/0X7MwWxc3vmDn2btJX44yQ==/109951165840042046.jpg", "targetId": 0, "adid": null, "targetType": 3000, "titleColor": "blue", "typeTitle": "数字专辑", "url": "https://music.163.com/store/newalbum/detail?id=96964667", "exclusive": false, "monitorImpress": null, "monitorClick": null, "monitorType": null, "monitorImpressList": null, "monitorClickList": null, "monitorBlackList": null, "extMonitor": null, "extMonitorInfo": null, "adSource": null, "adLocation": null, "adDispatchJson": null, "encodeId": "0", "program": null, "event": null, "video": null, "song": null, "scm": "1.music-homepage.homepage_banner_force.banner.2775079.328285508.null" }, { "imageUrl": "http://p1.music.126.net/HjyFXKmx3R9hibrLebFY-w==/109951165841225188.jpg", "targetId": 0, "adid": null, "targetType": 3000, "titleColor": "blue", "typeTitle": "数字专辑", "url": "https://music.163.com/store/newalbum/detail?id=125080528", "exclusive": false, "monitorImpress": null, "monitorClick": null, "monitorType": null, "monitorImpressList": null, "monitorClickList": null, "monitorBlackList": null, "extMonitor": null, "extMonitorInfo": null, "adSource": null, "adLocation": null, "adDispatchJson": null, "encodeId": "0", "program": null, "event": null, "video": null, "song": null, "scm": "1.music-homepage.homepage_banner_force.banner.2782098.328164604.null" }, { "imageUrl": "http://p1.music.126.net/L6tjrcJwqijJ-R9LWJMGoA==/109951165840475079.jpg", "targetId": 1832582017, "adid": null, "targetType": 1, "titleColor": "red", "typeTitle": "新歌首发", "url": null, "exclusive": false, "monitorImpress": null, "monitorClick": null, "monitorType": null, "monitorImpressList": null, "monitorClickList": null, "monitorBlackList": null, "extMonitor": null, "extMonitorInfo": null, "adSource": null, "adLocation": null, "adDispatchJson": null, "encodeId": "1832582017", "program": null, "event": null, "video": null, "song": null, "scm": "1.music-homepage.homepage_banner_force.banner.2754094.328106665.null" }, { "imageUrl": "http://p1.music.126.net/5YdIMZSaA8GN9X8nFKjWAQ==/109951165840454097.jpg", "targetId": 0, "adid": null, "targetType": 3000, "titleColor": "blue", "typeTitle": "数字专辑", "url": "https://music.163.com/store/newalbum/detail?id=125149262", "exclusive": false, "monitorImpress": null, "monitorClick": null, "monitorType": null, "monitorImpressList": null, "monitorClickList": null, "monitorBlackList": null, "extMonitor": null, "extMonitorInfo": null, "adSource": null, "adLocation": null, "adDispatchJson": null, "encodeId": "0", "program": null, "event": null, "video": null, "song": null, "scm": "1.music-homepage.homepage_banner_force.banner.2754095.328200162.null" }, { "imageUrl": "http://p1.music.126.net/Urp8nV-ka3rVjyWbuTQRZw==/109951165840045355.jpg", "targetId": 125196853, "adid": null, "targetType": 10, "titleColor": "red", "typeTitle": "新碟首发", "url": null, "exclusive": false, "monitorImpress": null, "monitorClick": null, "monitorType": null, "monitorImpressList": null, "monitorClickList": null, "monitorBlackList": null, "extMonitor": null, "extMonitorInfo": null, "adSource": null, "adLocation": null, "adDispatchJson": null, "encodeId": "125196853", "program": null, "event": null, "video": null, "song": null, "scm": "1.music-homepage.homepage_banner_force.banner.2784074.328283777.null" }, { "imageUrl": "http://p1.music.126.net/GgoFfOS51fS6j3iTslT1DA==/109951165840575783.jpg", "targetId": 1832468996, "adid": null, "targetType": 1, "titleColor": "red", "typeTitle": "独家", "url": null, "exclusive": false, "monitorImpress": null, "monitorClick": null, "monitorType": null, "monitorImpressList": null, "monitorClickList": null, "monitorBlackList": null, "extMonitor": null, "extMonitorInfo": null, "adSource": null, "adLocation": null, "adDispatchJson": null, "encodeId": "1832468996", "program": null, "event": null, "video": null, "song": null, "scm": "1.music-homepage.homepage_banner_force.banner.2780073.328222977.null" }, { "imageUrl": "http://p1.music.126.net/Kw14HzIYXtDlXCEMkjnM6Q==/109951165841233095.jpg", "targetId": 92333365, "adid": null, "targetType": 10, "titleColor": "red", "typeTitle": "独家", "url": null, "exclusive": false, "monitorImpress": null, "monitorClick": null, "monitorType": null, "monitorImpressList": null, "monitorClickList": null, "monitorBlackList": null, "extMonitor": null, "extMonitorInfo": null, "adSource": null, "adLocation": null, "adDispatchJson": null, "encodeId": "92333365", "program": null, "event": null, "video": null, "song": null, "scm": "1.music-homepage.homepage_banner_force.banner.2779087.328318305.null" }, { "imageUrl": "http://p1.music.126.net/sOHnmM_-QVN0AX8DRBO0Rg==/109951165840530284.jpg", "targetId": 1832399298, "adid": null, "targetType": 1, "titleColor": "red", "typeTitle": "独家", "url": null, "exclusive": false, "monitorImpress": null, "monitorClick": null, "monitorType": null, "monitorImpressList": null, "monitorClickList": null, "monitorBlackList": null, "extMonitor": null, "extMonitorInfo": null, "adSource": null, "adLocation": null, "adDispatchJson": null, "encodeId": "1832399298", "program": null, "event": null, "video": null, "song": null, "scm": "1.music-homepage.homepage_banner_force.banner.2760084.328318123.null" }, { "imageUrl": "http://p1.music.126.net/i0VCO-0qA7yTTjHFAHmiwA==/109951165841445813.jpg", "targetId": 1832598139, "adid": null, "targetType": 1, "titleColor": "red", "typeTitle": "独家", "url": null, "exclusive": false, "monitorImpress": null, "monitorClick": null, "monitorType": null, "monitorImpressList": null, "monitorClickList": null, "monitorBlackList": null, "extMonitor": null, "extMonitorInfo": null, "adSource": null, "adLocation": null, "adDispatchJson": null, "encodeId": "1832598139", "program": null, "event": null, "video": null, "song": null, "scm": "1.music-homepage.homepage_banner_force.banner.2780074.328170125.null" }, { "imageUrl": "http://p1.music.126.net/KNPEEcDyy5kPoThyBfBhkg==/109951165840614992.jpg", "targetId": 1830079389, "adid": null, "targetType": 1, "titleColor": "red", "typeTitle": "独家", "url": null, "exclusive": false, "monitorImpress": null, "monitorClick": null, "monitorType": null, "monitorImpressList": null, "monitorClickList": null, "monitorBlackList": null, "extMonitor": null, "extMonitorInfo": null, "adSource": null, "adLocation": null, "adDispatchJson": null, "encodeId": "1830079389", "program": null, "event": null, "video": null, "song": null, "scm": "1.music-homepage.homepage_banner_force.banner.2780075.328318242.null" }],
+                index: 0
+            },
+            methods: {
+                prev: function() {
+                    this.index--
+                    if(this.index < 0) {
+                        this.index = this.banners.length - 1
+                    }
+                },
+                next: function() {
+                    this.index++
+                    if(this.index === this.banners.length) {
+                        this.index = 0
+                    }
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>
