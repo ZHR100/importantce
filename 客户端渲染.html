@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>学生页面</h1>
+    <table border="1" cellpadding="20">
+        <tr>
+            <th>ID</th>
+            <th>姓名</th>
+            <th>年龄</th>
+        </tr>
+    </table>
+
+    <script src="./jquery-3.4.1.js"></script>
+    <script>
+        $.ajax({
+            url: 'http://127.0.0.1:3000/get/student',
+            dataType: 'json',
+            success: function(res) {
+                console.log(res);
+                var table = document.querySelector('table')
+                var str = ''
+                for(var i = 0; i < res.length; i++) {
+                    console.log(res[i]);
+                    str += `
+                        <tr>
+                            <td>${res[i].id}</td>
+                            <td>${res[i].name}</td>
+                            <td>${res[i].age}</td>
+                        </tr>
+                    `
+                }
+                table.innerHTML += str
+            }
+        })
+    </script>
+</body>
+</html>
